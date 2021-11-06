@@ -13,6 +13,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Transient;
+import javax.validation.constraints.NotBlank;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -30,14 +31,19 @@ public class UserSPTI implements Serializable{
     private Long id;
 
     @Column
+    @NotBlank
     private String firstName;
     @Column
+    @NotBlank
     private String lastName;
     @Column
+    @NotBlank
     private String email;
     @Column
+    @NotBlank
     private String username;
     @Column
+    @NotBlank
     private String passwd;
 
     @Transient
