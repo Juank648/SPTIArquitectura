@@ -1,5 +1,5 @@
 body{
-    background-image: radial-gradient(circle, #5b0c6b, #560c6b, #500c6a, #4b0c6a, #450c69);
+    background: url(../img/background.jpg) no-repeat center center fixed;
     background-size: cover;
 }
 
@@ -8,7 +8,7 @@ body{
     margin-top:5%;
 }
 .card{
-    opacity: .95;
+	opacity: .95;
 }
 .card-body{
     background-color: #d1d3d6;
@@ -16,13 +16,13 @@ body{
 }
 
 label{
-    font-weight: bold;
+	font-weight: bold;
 }
 
 .nav-tabs .nav-item a:not(.active){
-    background-color: #d1d3d6;
+	background-color: #d1d3d6;
 }
 
 .nav-tabs{
-    border-bottom:0px;
+	border-bottom:0px;
 }
