@@ -8,7 +8,9 @@ public class SptiArquitecturaApplication {
 
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(SptiArquitecturaApplication.class, args);
+
 	}
 
 }
