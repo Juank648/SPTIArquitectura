@@ -1,37 +1,27 @@
 package com.arq.sptiarquitectura.service;
 
-import java.util.Optional;
-
-import javax.validation.Valid;
-
+import com.arq.sptiarquitectura.Exception.CustomeFieldValidationException;
+import com.arq.sptiarquitectura.Exception.UsernameOrIdNotFound;
+import com.arq.sptiarquitectura.dto.ChangePasswordForm;
+import com.arq.sptiarquitectura.entity.User;
+import com.arq.sptiarquitectura.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-import com.arq.sptiarquitectura.entity.User;
 
-import com.arq.sptiarquitectura.Exception.CustomeFieldValidationException;
-import com.arq.sptiarquitectura.Exception.UsernameOrIdNotFound;
-import com.arq.sptiarquitectura.dto.ChangePasswordForm;
-
-import com.arq.sptiarquitectura.repository.UserRepository;
+import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements UserService{
 
-	final
+	@Autowired
 	UserRepository repository;
 	
-	final
+	@Autowired
 	BCryptPasswordEncoder bCryptPasswordEncoder;
-
-	public UserServiceImpl(UserRepository repository, BCryptPasswordEncoder bCryptPasswordEncoder) {
-		this.repository = repository;
-		this.bCryptPasswordEncoder = bCryptPasswordEncoder;
-	}
 
 	@Override
 	public Iterable<User> getAllUsers() {
