@@ -22,12 +22,17 @@ import com.arq.sptiarquitectura.repository.UserRepository;
 @Service
 public class UserServiceImpl implements UserService{
 
-	@Autowired
+	final
 	UserRepository repository;
 	
-	@Autowired
+	final
 	BCryptPasswordEncoder bCryptPasswordEncoder;
-	
+
+	public UserServiceImpl(UserRepository repository, BCryptPasswordEncoder bCryptPasswordEncoder) {
+		this.repository = repository;
+		this.bCryptPasswordEncoder = bCryptPasswordEncoder;
+	}
+
 	@Override
 	public Iterable<User> getAllUsers() {
 		return repository.findAll();
