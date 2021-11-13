@@ -18,10 +18,10 @@ import java.util.Optional;
 public class UserServiceImpl implements UserService{
 
 	@Autowired
-	UserRepository repository;
+	private UserRepository repository;
 	
 	@Autowired
-	BCryptPasswordEncoder bCryptPasswordEncoder;
+	private BCryptPasswordEncoder bCryptPasswordEncoder;
 
 	@Override
 	public Iterable<User> getAllUsers() {
